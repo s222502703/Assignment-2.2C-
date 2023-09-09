@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deakin University</title>
+    <style>
+      
+
+      .sidebar {
+          float: right;
+          width: 30%; 
+          padding: 20px;
+          background-color:darkblue 
+      }
+
+
+      #app {
+      display: inline-block;
+     font-size: 50px;
+    }
+
+   
+        @media only screen and (max-width: 800px) {
+        body {
+                
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                color:darkred;
+       
+        }
+      }
+        
+        img {
+            width: 50%;
+            height: auto;
+            }
+        table{                                     
+            border-collapse: collapse;
+            border:4px solid red;
+            background-color: lightcoral;
+        }
+        tr,th,td{
+            padding:20px;
+            border:4px dotted blue;
+            font-size:30px;
+        }
+
+    </style>
+</head>
+<body style="background-color: violet;">
+<H1 style="color: lime;"><b>Deakin University</b></H1>
+<p style>
+Deakin University is a prominent Australian public university known for its commitment to providing high-quality education, innovative research, and a global outlook. Established in 1974, Deakin has multiple campuses located across the state of Victoria, including Melbourne, Geelong, and Warrnambool, as well as a strong online presence. The university offers a wide range of undergraduate, postgraduate, and research programs across various disciplines, including arts and education, health, science, business, and technology.
+
+Deakin University is renowned for its dedication to digital innovation in education, offering flexible online learning options and a strong emphasis on research and innovation. It is recognized for its collaborative research efforts, particularly in areas such as health, artificial intelligence, and environmental sustainability.
+
+Deakin University's commitment to diversity and inclusion, along with its strong industry connections, has made it a popular choice for both domestic and international students seeking a world-class education. It consistently ranks well in national and international university rankings, reflecting its academic excellence and contributions to society.
+</p>
+
+<img src="https://d1vwxdpzbgdqj.cloudfront.net/s3-public-images/institutions/Deakin.png" alt="unilogo">
+
+<div>
+<p> If you want to know more about Deakin @   
+<a href="https://www.deakin.edu.au/about-deakin/locations"> Click here  </a>
+</p>
+</div>
+
+<h3 style="color:tomato"> The Deakin is popular for following courses.....</h3>
+
+<table>
+    <tr>
+    <th> Course Name</th>
+    <th>Type </th>
+    
+    </tr>
+    <tr>
+        <td> Information Technology</td>
+        <td>Bachelor</td>
+        
+    </tr>
+    <tr>
+        <td>Education</td>
+        <td>Masters  </td>
+     
+    </tr>
+    <tr>
+        <td>Sports </td>
+        <td>Bachelor and Masters</td>
+       
+    </tr>
+    <tr>
+        <td>Nursing</td>
+        <td>Bachelor</td>
+        
+    </tr>
+</table>
+<br>
+<div style="background-color: skyblue;">
+
+
+
+<pre>
+  <!-- Add this div for  text on the right side -->
+<div class="sidebar" style="background-color: cornflowerblue;">
+<span style="color:darkred; font-size: xx-large;">Deakin has been Ranked</span>
+<div id="app">
+<pre>
+<span style="color: limegreen;"><b>{{ message }} </b></span><span style="font-size: 25px;">for Sports </span>
+
+<span style="color: limegreen;"><b>{{ message }}</b></span><span style="font-size: 25px;"> for Student Satisfaction </span>
+
+<span style="color: limegreen;"><b>{{ message }}</b></span><span style="font-size: 25px;"> in Victoria  </span> 
+
+<span style="color: limegreen;"><b>{{ message }}</b></span><span style="font-size: 25px;"> for Teaching quality  </span> 
+</pre>    
+</div>
+</div>
+<div style="color:darkorchid ;font-size: xx-large;">
+  Deakin has Three Main campuses
+<ul>
+    <li> Burwood Campus</li>                                  
+                                                              
+     <div id="image" v-if="showImage">
+      <img v-bind:src="imageurl" alt="campus" >          
+      </div>    
+
+    <li> Geelong Campus</li>
+    <div id="image_2" v-if="showImage">
+        <img v-bind:src="imageurl" alt="campus_2" >          
+        </div>
+    <li> Warrnambool Campus</li>
+    <div id="image_3" v-if="showImage">
+        <img v-bind:src="imageurl" alt="campus_3" >         
+        </div>
+
+</ul>
+</div>
+</div>
+
+<div id="checker" style="background-color: springgreen ; color:red" >
+    <p>Select your Student type: - </p>
+    <button @click="selectInternational">International</button>
+    <button @click="selectDomestic">Domestic</button>
+    <div v-if="selectedOption === 'International'">
+    <p>You are having some visa Restrictions!!!!</p>
+  </div>
+  <div v-else-if="selectedOption === 'Domestic'">
+    <p>##You don't have any restriction ...##</p>
+  </div>
+</div>
+
+
+<form  action="./action.php" class="formstyle" style="background-color: lemonchiffon; color: darkblue;"><!-- using ./action.php for backend purposes-->
+    <pre><h1 style="background-color: pink; color:red"><b>                         Student's Advisor Meeting Form              </pre>                                     </b></h1></pre>
+
+<div>
+<pre>    
+  <label for="Enter your Name ">Name:</label> <input type="text" placeholder="Enter  username "><br>
+
+  <label for="Enter the Date of Birth">Date Of Birth:</label><input type="date" placeholder="Enter the D.O.B">
+</pre>
+</div><br>
+
+<div>
+<pre>
+<b>Select your area of Study  :- </b>
+<label for="101">
+    <input type="radio" name="field" value="computer Science/IT" id="101">Computer Science/Information Technology
+</label>
+<label for="102">
+    <input type="radio" name="field" value="Nursing" id="102"> Nursing
+</label>
+<label for="103">
+    <input type="radio" name="field" value="Trade Course " id="103">Trade Course 
+</label>
+<label>
+    <input type="radio" name="field" value="Psychology" id="104"> Psychology
+</label>
+<lable>
+    <input type="radio" name="field" value="Law" id="105"> Law/Criminology
+</lable>
+<label>
+    <input type="radio" name="field" value="Social Science" id="106"> Social Science
+</label>
+</pre>
+</div>
+
+<div>
+    <pre>
+ <b>Select the extracurricular Interests  </b>
+<label for="1">
+    <input type="checkbox" value="Music" name="activity" id="1">Music
+</label>
+  <label for="2">
+    <input type="checkbox" value="Sports" name="activity" id="2">Sports 
+</label>
+<label for="3">
+    <input type="checkbox" value="Yoga" name="activity" id="3"> Yoga 
+</label>
+    <label for="4">
+    <input type="checkbox" value="Athletics" name="activity" id="4"> Athletics
+</label>
+<label for="5">
+    <input type="checkbox" value="mind games " name="unit" id="4"> Mind games
+</label>
+<label for="6">
+    <input type="checkbox" value="lyrics writing " name="unit" id="4"> Lyrics Writing 
+</label>
+
+
+    </pre>
+</div>
+
+<div> 
+    <fieldset>
+       <textarea cols="60" rows="10" placeholder="Enter your comments"></textarea>
+    </fieldset>
+   
+    <input type="submit" value="submit"> 
+
+
+</div>
+</form>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+
+  const image = Vue.createApp({
+  data() {
+    return {
+      showImage: true,
+      imageurl:'https://inhabitgroup.com/wp-content/uploads/2016/09/deakin-university-bhf-building-melbourne-australia-002.jpg'
+    };
+  }
+});
+image.mount('#image');
+
+const image_2 = Vue.createApp({
+  data() {
+    return {
+      showImage: true,
+      imageurl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtp-Ms0usIvBOM3he9d8eeuDNanjuMd0m4Yw&usqp=CAU.jpg'
+    };
+  }
+});
+image_2.mount('#image_2');
+
+const image_3 = Vue.createApp({
+  data() {
+    return {
+      showImage: true,
+      imageurl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKGClvr1oCeiZhIvKDw7Fw4J-5dXaw3MgXdQ&usqp=CAU.jpg'
+    };
+  }
+});
+image_3.mount('#image_3');
+
+const checker = Vue.createApp({
+    data() {
+      return {
+        selectedOption: '' ,
+        
+      }
+    },
+    methods: {
+      selectDomestic() {
+        this.selectedOption = 'Domestic';
+      },
+      selectInternational() {
+        this.selectedOption = 'International';
+      }
+    }
+});
+checker.mount('#checker');
+
+const app = Vue.createApp({
+    data() {
+      return {
+        message: "#1"
+    
+      }
+    }
+  });
+  app.mount('#app')
+
+
+
+</script>
+</body>
+</html>
