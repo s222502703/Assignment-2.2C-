@@ -6,6 +6,27 @@
     <title>Deakin University</title>
     <style>
       
+      #score_card{
+        display:block;
+        background-color: red;
+        color: yellow;
+        float:right;
+        
+        
+        border: 2px solid blue; /* Add a border for the score card */
+      }
+      #final_enrol {
+      border: black dashed 1px;
+      background-color: lightpink;
+      width: 400px;
+      }
+
+      footer{
+        text-align: center;
+       padding: 1rem;
+        background-color: grey;
+      color: white; 
+      }
 
       .sidebar {
           float: right;
@@ -150,7 +171,7 @@ Deakin University's commitment to diversity and inclusion, along with its strong
 </div>
 
 
-<form  action="./action.php" class="formstyle" style="background-color: lemonchiffon; color: darkblue;"><!-- using ./action.php for backend purposes-->
+<form action="./action.php"  class="formstyle" style="background-color: lemonchiffon; color: darkblue;"><!-- using ./action.php for backend purposes-->
     <pre><h1 style="background-color: pink; color:red"><b>                         Student's Advisor Meeting Form              </pre>                                     </b></h1></pre>
 
 <div>
@@ -213,16 +234,40 @@ Deakin University's commitment to diversity and inclusion, along with its strong
 
 <div> 
     <fieldset>
-       <textarea cols="60" rows="10" placeholder="Enter your comments"></textarea>
+       <textarea cols="40" rows="5" placeholder="Enter your comments"></textarea>
     </fieldset>
+</div>
+    
+<div id="score_card">
+ <h1> ***Study Record***</h1>
+  <p>Marks in 12th grade: -  "{{ inpText }}" </p>
+  <input type="text" v-model="inpText" placeholder="Enter Your marks here">
+  <p>Stream: - "{{message}}" </p>
+  <input type="text" v-model="message" placeholder="Enter Your Stream here">
+</div>
+
+<pre>
+  <div id="final_enrol">
+   <p>For the final enrollment . Click here: --</p>
+   <button v-on:click="createEnrollment">Create Enrollment </button>
+  </div> 
    
-    <input type="submit" value="submit"> 
+<input type="submit" value="submit"> 
+  </pre>
+
 
 
 </div>
 </form>
 </div>
+  
 
+ 
+
+<footer>
+  <!-- Add footer content here -->
+  <p>&copy; 2023 Deakin University. All rights reserved.</p>
+</footer>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <script>
@@ -285,6 +330,24 @@ const app = Vue.createApp({
   });
   app.mount('#app')
 
+const final_enrol= Vue.createApp({
+  methods: {
+      createEnrollment() {
+        alert("Student added to system !!!!")
+      }
+    }
+  })
+final_enrol.mount('#final_enrol')
+  
+const score_card = Vue.createApp({
+    data() {
+      return {
+        inpText: '',
+        message:''
+      }
+    }
+  })
+score_card.mount('#score_card')
 
 
 </script>
